@@ -42,12 +42,13 @@ class MatriculaComponent extends Component
             } else {
                 session()->flash('state', 'La materia ya está inscrita.');
             }
+            $this->showSubjectsByCarnet();
         } else {
-            if(empty($estudiante || empty($materia))){ 
+            if(empty($estudiante) || empty($materia)){ 
                 session()->flash('state', 'Revise su carnet y código de materia.');
             }
-        }
-        $this->showSubjectsByCarnet();
+            $this->inscritas = [];
+        }        
     }
 
     public function showSubjectsByCarnet(){        
@@ -66,5 +67,6 @@ class MatriculaComponent extends Component
         $matricula->delete();
 
         $this->showSubjectsByCarnet();
+        session()->flash('state', 'Materia eliminada.');
     }
 }

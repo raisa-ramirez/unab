@@ -18,12 +18,12 @@
             </div>
             <div class="col-lg-12 pt-4 pb-4">
                 <button class="btn btn-primary" type="button" wire:click="store">Matricular</button>
-                <button class="btn btn-warning" type="button" wire:click="showSubjectsByCarnet">Mostrar materias</button>
+                <button class="btn btn-warning" type="button" wire:click="showSubjectsByCarnet">Mostrar inscripción</button>
             </div>
         </div>
     </form>
     <div class="row">
-        <h3 class="text-center text-dark">Materias Inscritas</h3>
+        <h4 class="text-center text-dark">Materias Inscritas</h4>
         <table class="table table-hovered table-bordered">
             <thead>
                 <tr>
