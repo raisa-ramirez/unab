@@ -1,6 +1,6 @@
-CREATE DATABASE unabdb1;
+CREATE DATABASE unabdb;
 GO
-use unabdb1;
+use unabdb;
 
 GO
 create table estudiantes(
