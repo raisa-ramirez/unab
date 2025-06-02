@@ -2,6 +2,7 @@ CREATE DATABASE unabdb;
 GO
 use unabdb;
 
+-- Structure
 GO
 create table estudiantes(
 	id bigint identity(1,1) PRIMARY KEY NOT NULL,
@@ -33,3 +34,10 @@ create table matriculas(
 
 insert into estudiantes(nombre_completo,carnet, fecha_nacimiento) values('Raisa Ramírez','221413', GETDATE()),('Diana Ramírez','221513', GETDATE());
 insert into materias(nombre, codigo) values('PHP', '123'),('Java','456');
+
+-- VIEW
+CREATE VIEW [student_card]
+AS 
+SELECT es.nombre_completo as 'Estudiante', es.carnet as 'Carnet', mat.nombre as 'Materia Inscrita', ma.fecha as 'Fecha de inscripción' FROM matriculas ma 
+inner join estudiantes es on es.id = ma.id_estudiante 
+inner join materias mat on mat.id=ma.id_materia;
